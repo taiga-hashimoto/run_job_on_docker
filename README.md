@@ -1,0 +1,2 @@
+# run_job_on_docker
+DockerFileからimageをビルドしてそれ上で実行
