@@ -1,0 +1,12 @@
+FROM golang:1.16.14-bullseye
+
+ENV APP_ROOT /src
+WORKDIR $APP_ROOT
+
+# download app deps
+COPY go.mod $APP_ROOT
+COPY go.sum $APP_ROOT
+RUN go mod download
+
+# use bash for entrypoint to run commands passed on running this Docker image
+ENTRYPOINT ["/bin/bash", "-c"]
