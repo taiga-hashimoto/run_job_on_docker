@@ -1,4 +1,4 @@
-FROM golang:1.16.14-bullseye
+FROM alpine:3.10
 
 ENV APP_ROOT /src
 WORKDIR $APP_ROOT
