@@ -12,11 +12,10 @@ jobs:
       - uses: docker/build-push-action@v2
         with:
           file: Dockerfile
-          tags: yourtestapp
+          tags: test-image
           push: false # pushするならここtrueでもいい
 
       - uses: addnab/docker-run-action@v3
         with:
-          image: yourtestapp
-          options: -v ${{ github.workspace }}:/src
-          run: make test
+          image: test-image
+          run: echo "hello world"
